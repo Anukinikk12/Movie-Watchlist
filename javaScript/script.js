@@ -13,14 +13,14 @@ document.addEventListener('click', function(e){
 if (searchBtn) {
   searchBtn.addEventListener("click", async () => {
     let title = searchTitle.value;
-    const resp = await fetch(`http://www.omdbapi.com/?s=${title}&apikey=49951e7f`);
+    const resp = await fetch(`https://www.omdbapi.com/?s=${title}&apikey=49951e7f`);
     const data = await resp.json();
     renderMovie(data);
   });
 }
 
 async function addMovie(movieId){
-    const resp = await fetch(`http://www.omdbapi.com/?i=${movieId}&apikey=49951e7f`)
+    const resp = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=49951e7f`)
     const data = await resp.json()
     addingMovies.unshift(data)
     localStorage.setItem("addingMovies", JSON.stringify(addingMovies));
@@ -36,7 +36,7 @@ function renderMovie(d){
     }
     movies.innerHTML =""
     d.Search.forEach(async c => {
-        const movieResp = await fetch(`http://www.omdbapi.com/?i=${c.imdbID}&apikey=49951e7f`);
+        const movieResp = await fetch(`https://www.omdbapi.com/?i=${c.imdbID}&apikey=49951e7f`);
         const movieDetails = await movieResp.json();
         console.log(movieDetails)
         const div = document.createElement("div");
