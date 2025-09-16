@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: 30vw;
+  background: url('../images/headerposter.png') no-repeat center 20% / cover;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.header-title{
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-title > h1{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.header-title > a{
+    font-size: 0.675rem;
+    font-weight: bold;
+    margin-top: 0.32em;
+}
+
+a{
+    text-decoration: none;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    position: relative;
+}
+
+.search input, .search button{
+    background-color: #9CA3AF;
+    z-index: 3;
+    margin-bottom: 30px;
+    border: none;
+    
+}
+
+.search input{
+    width: 70%;
+    padding: 5px;
+    background-color: #2E2E2F;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.search button{
+    width: 30%;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #4B4B4B;
+}
+
+body{
+    position: relative;
+    background-color: #121212;
+}
+
+#searchtitle{
+    padding-left: 20px;
+}
+
+.search i {
+    position: absolute;
+    z-index: 5;
+    left: 0.3em;
+    top: 0.6em;
+    font-size: 0.75rem; 
+}
+
+div img{
+    width: 30vw;
+    align-self: center;
+    max-width: 600px;
+}
+
+#movies, #addingMovies{
+    display: grid;
+    gap: 1.25em;
+}
+
+#movies div, #addingMovies div {
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+#movies .descr, #addingMovies .descr{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 0.75rem;
+}
+
+#movies p:last-child, #addingMovies p:last-child{
+    color: #A5A5A5;
+}
+
+#movies .descr .add, #movies .descr a {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#addingMovies{
+    margin-top: 20px;
+}
+
+#emptyPage {
+    text-align: center;
+    margin: 40vw 0;
+}
+
+#emptyPage h3{
+    font-size: 1rem;
+    color: #787878;
+    margin-bottom: 1em;
+}
+
+#emptyPage a{
+ font-size: 0.777rem;
+}
+
+.hidden{
+    display: none;
+}
+
+#emptyPage .film{
+    font-size: 70px;
+    color: #2E2E2F;
+}
+
+.star {
+    color: #FEC654;
+}
+
+@media(min-width: 700px){
+        .header-title > h1{
+            font-size: 3vw;
+        }
+        .header-title > a {
+            font-size: 1.5vw;
+        }
+
+        .container {
+            padding: 0 8em;
+        }
+
+        #movies, #addingMovies{
+            align-self: center;
+            font-size: 1.5em;
+        }
+
+}
+
