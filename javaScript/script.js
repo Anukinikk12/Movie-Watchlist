@@ -22,6 +22,9 @@ if (searchBtn) {
 async function addMovie(movieId){
     const resp = await fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=49951e7f`)
     const data = await resp.json()
+    if(addingMovies.some(m => m.imdbID === movieId)){
+        return
+    }
     addingMovies.unshift(data)
     localStorage.setItem("addingMovies", JSON.stringify(addingMovies));
 }
